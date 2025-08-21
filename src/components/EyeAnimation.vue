@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center align-items-center">
-    <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+    <svg :width="size" :height="size" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
       <circle cx="125" cy="125" r="120" fill="#ffc107" />
       <circle cx="125" cy="125" r="90" fill="#ffde59" />
       <circle ref="pretoOlho" cx="125" cy="125" r="60" fill="#000000" />
@@ -14,7 +14,13 @@
 import { gsap } from 'gsap';
 
 export default {
-  name: 'FirstAnimation',
+  name: 'EyeAnimation',
+  props: {
+    size: {
+      type: [String, Number],
+      default: 250,
+    },
+  },
   mounted() {
     const pretoOlho = this.$refs.pretoOlho;
     const pupilaOlho = this.$refs.pupilaOlho;

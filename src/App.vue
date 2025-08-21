@@ -6,24 +6,18 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 
-const route = useRoute()
 
 const allLinks = [
-  { path: '/calendar', name: 'Calendário', icon: 'bi bi-calendar-fill' },
-  { path: '/notes', name: 'Bloco de Notas', icon: 'bi bi-pencil-square' },
+  { path: '/', name: 'Início', icon: 'bi bi-house-fill' },
+  {path: '/download', name: 'Download', icon: 'bi bi-download'},
   { path: '/support', name: 'Suporte', icon: 'bi bi-question-circle-fill' },
 ]
 
 const navLinks = computed(() => {
-  if (route.path === '/') {
-    return allLinks
-  }
-  const remaining = allLinks.filter((link) => link.path !== route.path)
-  return [{ path: '/', name: 'Início', icon: 'bi bi-house-fill' }, ...remaining]
+  return allLinks
 })
 </script>
 

@@ -3,32 +3,28 @@
     <div
       class="container d-flex flex-column flex-md-row align-items-center justify-content-between"
     >
-      <!-- Título -->
       <div class="d-flex align-items-center">
         <router-link to="/" class="d-flex align-items-center text-decoration-none">
-        <h1 class="h3 ms-2 mb-0 text-warning">{{ title_one }}</h1>
-        <h1 class="h3 ms-1 mb-0 text-white  ">{{ title_two }}</h1>
+          <h1 class="h3 ms-2 mb-0 text-warning">{{ title_one }}</h1>
+          <h1 class="h3 ms-1 mb-0 text-white">{{ title_two }}</h1>
         </router-link>
-     </div>
+      </div>
 
-      <!-- Navegação -->
-      <nav>
-        <ul class="nav d-flex flex-column flex-md-row mb-0 gap-2">
-          <li
-            v-for="(link, index) in links"
-            :key="index"
-            class="nav-item rounded-5 custom-nav-item-hover"
-          >
-            <router-link class="nav-link text-white fw-bold" :to="link.path">
-              <i :class="link.icon" class="me-1" aria-hidden="true"></i>
-              {{ link.name }}
-            </router-link>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Botões -->
       <div class="d-flex flex-column flex-sm-row">
+        <nav class="nav mb-2 mb-sm-0 me-sm-3">
+          <ul class="nav d-flex flex-column flex-md-row mb-0 gap-2">
+            <li v-for="link in links" :key="link.path" class="nav-item">
+              <router-link
+                :to="link.path"
+                class="nav-link text-white custom-nav-item-hover rounded-4 d-flex align-items-center gap-2"
+              >
+                <i :class="link.icon"></i>
+                {{ link.name }}
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+
         <button class="btn btn-outline-light me-sm-2 mb-2 mb-sm-0">Login</button>
         <button class="btn btn-warning btn-hover-custom">Sign Up</button>
       </div>
@@ -37,8 +33,8 @@
 </template>
 
 <script>
- export default {
-   name: 'HeaderComponent',
+export default {
+  name: 'HeaderComponent',
   props: {
     title_one: {
       type: String,
