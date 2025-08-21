@@ -5,9 +5,11 @@
     >
       <!-- Título -->
       <div class="d-flex align-items-center">
-        <h1 class="h3 mb-2 mb-md-0 text-warning">{{ title_one }}</h1>
-        <h1 class="h3 mb-2 mb-md-0">{{ title_two }}</h1>
-      </div>
+        <router-link to="/" class="d-flex align-items-center text-decoration-none">
+        <h1 class="h3 ms-2 mb-0 text-warning">{{ title_one }}</h1>
+        <h1 class="h3 ms-1 mb-0 text-white  ">{{ title_two }}</h1>
+        </router-link>
+     </div>
 
       <!-- Navegação -->
       <nav>
@@ -35,8 +37,8 @@
 </template>
 
 <script>
-export default {
-  name: 'HeaderComponent',
+ export default {
+   name: 'HeaderComponent',
   props: {
     title_one: {
       type: String,

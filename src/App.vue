@@ -1,12 +1,14 @@
 <template>
   <HeaderComponent title_one="Stein" title_two="Assistant" route_logo_link="/" :links="navLinks" />
   <router-view />
+  <FooterComponent companyName="Stein Assistant" />
 </template>
 
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 const route = useRoute()
 

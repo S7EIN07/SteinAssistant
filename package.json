@@ -20,6 +20,7 @@
     "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.7",
     "bootstrap-icons": "^1.13.1",
+    "gsap": "^3.13.0",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.16.3",
